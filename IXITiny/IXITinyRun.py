@@ -1,6 +1,4 @@
-global ROOT_DIR
-ROOT_DIR = '/gpfs/commons/groups/gursoy_lab/aelhussein/ot_cost/otcost_fl_rebase'
-
+from config import ROOT_DIR
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -21,8 +19,8 @@ import torch.nn.functional as F
 from torch.optim.lr_scheduler import ExponentialLR
 
 EPOCHS = 500
-BATCH_SIZE = 64
-RUNS = 10000
+BATCH_SIZE = 16
+RUNS = 1
 DATASET = 'IXITiny'
 METRIC_TEST = 'DICE'
 LEARNING_RATE = 5e-3
@@ -108,7 +106,7 @@ def main():
     inputs = [(c, loadData, DATASET, METRIC_TEST, BATCH_SIZE, EPOCHS, DEVICE, RUNS) for c in costs]
     results = []
     for input in inputs:
-        results.append(pp.run_model_for_cost(input))
+        results.append(run_model_for_cost(input))
 
     losses = {}
     metrics_all = pd.DataFrame()

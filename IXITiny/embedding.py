@@ -11,8 +11,8 @@ import torchio as tio
 from pathlib import Path
 import copy
 from unet import UNet
+from config import ROOT_DIR
 
-ROOT_DIR = '/gpfs/commons/groups/gursoy_lab/aelhussein/ot_cost/otcost_fl'
 BATCH_SIZE = 8
 LR = 1e-3
 EPOCHS = 1000

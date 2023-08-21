@@ -2,10 +2,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import numpy as np
-
-
-global ROOT_DIR
-ROOT_DIR = '/gpfs/commons/groups/gursoy_lab/aelhussein/ot_cost/otcost_fl_rebase'
+from config import ROOT_DIR
 SAVE_DIR = f'{ROOT_DIR}/results'
 
 def grapher(dataset, df, metric, costs, save = False):

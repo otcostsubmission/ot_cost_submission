@@ -7,14 +7,14 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-
+from config import ROOT_DIR
 
 
 def splitData(frac_pos, frac_neg):
     
     ##load features and cohort data
     path = '/gpfs/commons/groups/gursoy_lab/aelhussein/DCI_FL/server/Data/'
-    data = pd.read_csv(path+'dataset.csv')
+    data = pd.read_csv(f'{ROOT_DIR}/data/Synthetic/dataset.csv')
     cohort = pd.read_csv(path+'cohort_use.csv')
     ##create full dataset then split features and outcomes (needed as not full cohort in the dataset) 
     full_df = data.merge(cohort[['hadm_id', 'outcome']], on = 'hadm_id').set_index('hadm_id')

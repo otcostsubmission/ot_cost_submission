@@ -3,9 +3,7 @@ import numpy as np
 import sys
 import random
 from sklearn.utils import shuffle
-
-global ROOT_DIR
-ROOT_DIR = '/gpfs/commons/groups/gursoy_lab/aelhussein/ot_cost/otcost_fl_rebase'
+from config import ROOT_DIR
 DATA_DIR = f'{ROOT_DIR}/data/Synthetic'
 
 def dataset_creator(lv_pos, lv_neg, dataset, total_cases, pos_share, label_switch, coef_sep = 0.85, switch = False, seed = 1):

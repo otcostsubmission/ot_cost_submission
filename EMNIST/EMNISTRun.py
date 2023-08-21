@@ -1,6 +1,4 @@
-global ROOT_DIR
-ROOT_DIR = '/gpfs/commons/groups/gursoy_lab/aelhussein/ot_cost/otcost_fl_rebase'
-
+from config import ROOT_DIR
 import pandas as pd
 import torch
 import torch.nn as nn
